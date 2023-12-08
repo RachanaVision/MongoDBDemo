@@ -1,0 +1,37 @@
+﻿<br />
+
+<table>
+    <tr>
+        <td>First Name : </td>
+        <td>
+            <input type="text" id="firstname"/>
+        </td>
+    </tr>
+    <tr>
+        <td>Last Name : </td>
+        <td>
+            <input type="text" id="lastname" />
+        </td>
+    </tr>
+    <tr>
+        <td>Age : </td>
+        <td>
+            <input type="number" id="age" />
+        </td>
+    </tr>
+    <tr>
+        <td><input type="hidden" id="id" /></td>
+        <td>
+            <button class="btn btn-default btn-success" onclick="InsertUpdateRecord()">Submit</button> &nbsp;
+            <button class="btn btn-danger btn-default" onclick="CancelButtonClick()">Cancel</button>
+        </td>
+    </tr>
+</table>
+
+
+<script src="~/js/Employee.js"></script>
+<script>
+    $(document).ready(function () {
+        SetEmployeeDetails();
+    })
+</script>

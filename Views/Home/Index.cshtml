@@ -1,0 +1,27 @@
+﻿<br />
+<button class="btn btn-primary btn-default" onclick="ButtonClick()">Add Record</button>
+<br /><br />
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Age</th>
+            <th>&nbsp;</th>
+            <th>&nbsp;</th>
+        </tr>
+    </thead>
+    <tbody id="employeeList">
+        <tr id="employee"></tr>
+    </tbody>
+</table>
+
+
+<script src="~/js/Employee.js"></script>
+<script>
+    $(document).ready(function () {
+        GetAllRecords();
+    });
+</script>
