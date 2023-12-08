@@ -16,11 +16,13 @@ namespace MongoDBDemo.Models
         [Required]
         public int Age { get; set; }
 
-        //[Required]
-        //public string Gender { get; set; }
+        [Required]
+        public string Gender { get; set; }
 
-        //[Required]
-        //public string city { get; set; }
+        [Required]
+        public string City { get; set; }
 
+        [Required]
+        public string Hobby { get; set; } 
     }
 }

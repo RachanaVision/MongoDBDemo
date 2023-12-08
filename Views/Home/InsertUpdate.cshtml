@@ -3,24 +3,74 @@
 <table>
     <tr>
         <td>First Name : </td>
+        <td>&nbsp;</td>
         <td>
-            <input type="text" id="firstname"/>
+            <input type="text" id="firstname" class="form-control"/>
         </td>
     </tr>
+    <tr><td>&nbsp;</td></tr>
     <tr>
         <td>Last Name : </td>
+        <td>&nbsp;</td>
         <td>
-            <input type="text" id="lastname" />
+            <input type="text" id="lastname" class="form-control" />
         </td>
     </tr>
+    <tr><td>&nbsp;</td></tr>
     <tr>
         <td>Age : </td>
+        <td>&nbsp;</td>
         <td>
-            <input type="number" id="age" />
+            <input type="number" id="age" class="form-control" />
+        </td>
+    </tr>
+    <tr><td>&nbsp;</td></tr>
+    <tr>
+        <td>Gender : </td>
+        <td>&nbsp;</td>
+        <td>
+            <input type="radio" id="male" name="gender" class="form-check-input" value="Male" /> Male  &nbsp;
+            <input type="radio" id="female" name="gender" class="form-check-input" value="Female" /> Female
+        </td>
+    </tr>
+    <tr><td>&nbsp;</td></tr>
+    <tr>
+        <td>City : </td>
+        <td>&nbsp;</td>
+        <td>
+            <select id="city" style="height:40px; width:350px" class="form-control">
+                <option value="">--------------------- Select ---------------------</option>
+                <option value="Valsad">Valsad</option>
+                <option value="Navsari">Navsari</option>
+                <option value="Surat">Surat</option>
+                <option value="Vadodara">Vadodara</option>
+                <option value="Ahmedabad">Ahmedabad</option>
+            </select>
+        </td>
+    </tr>
+    <tr><td>&nbsp;</td></tr>
+    <tr>
+        <td>Hobby : </td>
+        <td>&nbsp;</td>
+        <td>
+            <input type="checkbox" id="dancing" class="form-check-input" value="Dancing" /> Dancing &nbsp;
+            <input type="checkbox" id="dancing" class="form-check-input" value="Cooking" /> Cooking &nbsp;
+            <input type="checkbox" id="dancing" class="form-check-input" value="Listen Music" /> Listen Music
         </td>
     </tr>
     <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>
+            <input type="checkbox" id="dancing" class="form-check-input" value="Reading" /> Reading &nbsp;
+            <input type="checkbox" id="dancing" class="form-check-input" value="Walking" /> Walking &nbsp;&nbsp;
+            <input type="checkbox" id="dancing" class="form-check-input" value="Swimming" /> Swimming
+        </td>
+    </tr>
+    <tr><td>&nbsp;</td></tr>
+    <tr>
         <td><input type="hidden" id="id" /></td>
+        <td>&nbsp;</td>
         <td>
             <button class="btn btn-default btn-success" onclick="InsertUpdateRecord()">Submit</button> &nbsp;
             <button class="btn btn-danger btn-default" onclick="CancelButtonClick()">Cancel</button>
