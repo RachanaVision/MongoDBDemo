@@ -22,7 +22,9 @@ namespace MongoDBDemo.Models
         [Required]
         public string City { get; set; }
 
-        [Required]
-        public string Hobby { get; set; } 
+        //[Required]
+        //public string Hobby { get; set; } 
+
+        public List<string> Hobby { get; set; }
     }
 }

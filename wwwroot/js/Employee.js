@@ -32,7 +32,7 @@ function InsertUpdateRecord() {
             FirstName: FirstName,
             LastName: lastname,
             Age: age,
-            Hobby: hobbies,
+            Hobby: selectedHobbies,
             City: city,
             Gender: selectedGender
         }
@@ -57,7 +57,7 @@ function InsertUpdateRecord() {
             FirstName: FirstName,
             LastName: lastname,
             Age: age,
-            Hobby: hobbies,
+            Hobby: selectedHobbies,
             City: city,
             Gender: selectedGender,
             Id: id
@@ -132,7 +132,7 @@ function SetEmployeeDetails() {
         document.getElementById('female').checked = true;
     }
 
-    var selectedHobbies = employee.hobby.split(",");
+    var selectedHobbies = employee.hobby;//.split(",");
     var hobbies = document.querySelectorAll('input[type="checkbox"]');
     hobbies.forEach(function (checkbox) {
         if (selectedHobbies.includes(checkbox.value)) {
