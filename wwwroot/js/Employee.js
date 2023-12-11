@@ -40,8 +40,8 @@ function InsertUpdateRecord() {
         xhr.open("POST", "/Home/InsertRecord", true);
         xhr.setRequestHeader('Content-Type', 'application/json');
         xhr.onreadystatechange = function () {
-            if (xhr.readyState === XMLHttpRequest.DONE) {
-                if (xhr.status === 200) {
+            if (xhr.readyState == XMLHttpRequest.DONE) {
+                if (xhr.status == 200) {
                     alert("Record Inserted successfully..!!");
                     window.location.href = "/Home/Index";
                 } else {
@@ -66,8 +66,8 @@ function InsertUpdateRecord() {
         xhr.open("PUT", "/Home/UpdateRecord", true);
         xhr.setRequestHeader('Content-Type', 'application/json');
         xhr.onreadystatechange = function () {
-            if (xhr.readyState === XMLHttpRequest.DONE) {
-                if (xhr.status === 200) {
+            if (xhr.readyState == XMLHttpRequest.DONE) {
+                if (xhr.status == 200) {
                     alert("Record Updated successfully..!!");
                     window.location.href = "/Home/Index";
                 } else {
@@ -84,8 +84,8 @@ function GetAllRecords() {
     var xhr = new XMLHttpRequest();
     xhr.open("GET", "/Home/GetAllRecord", true);
     xhr.onreadystatechange = function () {
-        if (xhr.readyState === XMLHttpRequest.DONE) {
-            if (xhr.status === 200) {
+        if (xhr.readyState == XMLHttpRequest.DONE) {
+            if (xhr.status == 200) {
                 var employeeList = JSON.parse(xhr.responseText);                
                 var setEmployeeList = document.getElementById('employeeList');
 
