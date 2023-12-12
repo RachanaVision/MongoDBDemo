@@ -1,4 +1,6 @@
+using Amazon.Runtime.Internal;
 using Microsoft.AspNetCore.Mvc;
+using MongoDB.Bson;
 using MongoDB.Driver;
 using MongoDBDemo.Models;
 using System.Diagnostics;
@@ -41,7 +43,8 @@ namespace MongoDBDemo.Controllers
             {
                 if(request != null)
                 {
-                    _mongoCollection.InsertOne(request);
+                    request.Hobby.Id = ObjectId.GenerateNewId().ToString();
+                    await _mongoCollection.InsertOneAsync(request);
                     return Ok();
                 }
                 else
@@ -87,7 +90,29 @@ namespace MongoDBDemo.Controllers
             {
                 if (request != null)
                 {
-                    _mongoCollection.ReplaceOne(x => x.Id == request.Id, request);
+                    await _mongoCollection.ReplaceOneAsync(x => x.Id == request.Id, request);
+                    return Ok();
+                }
+                else
+                {
+                    throw new ArgumentNullException();
+                }
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public async Task<IActionResult> UpdateHobbies([FromBody] EmployeeRequest request)
+        {
+            try
+            {
+                if(request != null)
+                {                   
+                    var hobbies = Builders<EmployeeRequest>.Update.Set(request => request.Hobby.Hobbies,request.Hobby.Hobbies);                   
+                    await _mongoCollection.FindOneAndUpdateAsync(x=> x.Id == request.Id , hobbies);
+
                     return Ok();
                 }
                 else
@@ -105,7 +130,23 @@ namespace MongoDBDemo.Controllers
         {
             try
             {
-                _mongoCollection.DeleteOne(x => x.Id == id);
+                await _mongoCollection.DeleteOneAsync(x => x.Id == id);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public async Task<IActionResult> DeleteAllHobbies(string id)
+        {
+            try
+            {
+                var filter = Builders<EmployeeRequest>.Filter.Eq("_id", ObjectId.Parse(id));
+                var update = Builders<EmployeeRequest>.Update.Set("Hobby.Hobbies", new List<string>());
+
+                await _mongoCollection.UpdateOneAsync(filter, update);
+
                 return Ok();
             }
             catch (Exception ex)

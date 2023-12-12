@@ -25,6 +25,16 @@ namespace MongoDBDemo.Models
         //[Required]
         //public string Hobby { get; set; } 
 
-        public List<string> Hobby { get; set; }
+        // public List<string> Hobby { get; set; }
+        public Hobby Hobby {get; set;}
+    }
+
+    public class Hobby
+    {
+        [BsonId]
+        [BsonRepresentation(BsonType.ObjectId)]
+        public string? Id { get; set; }
+
+        public List<string> Hobbies { get; set; }
     }
 }

@@ -54,22 +54,23 @@
         <td>&nbsp;</td>
         <td>
             <input type="checkbox" id="dancing" class="form-check-input" value="Dancing" /> Dancing &nbsp;
-            <input type="checkbox" id="dancing" class="form-check-input" value="Cooking" /> Cooking &nbsp;
-            <input type="checkbox" id="dancing" class="form-check-input" value="Listen Music" /> Listen Music
+            <input type="checkbox" id="cooking" class="form-check-input" value="Cooking" /> Cooking &nbsp;
+            <input type="checkbox" id="listenMusic" class="form-check-input" value="Listen Music" /> Listen Music
         </td>
+        <td rowspan="2"><button class="btn-danger" id="removeAllHobbies" onclick="RemoveAllHobbies()" style="display:none; height:30px; width:159px;">Remove All Hobbies</button></td>
     </tr>
     <tr>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
         <td>
-            <input type="checkbox" id="dancing" class="form-check-input" value="Reading" /> Reading &nbsp;
-            <input type="checkbox" id="dancing" class="form-check-input" value="Walking" /> Walking &nbsp;&nbsp;
-            <input type="checkbox" id="dancing" class="form-check-input" value="Swimming" /> Swimming
-        </td>
+            <input type="checkbox" id="reading" class="form-check-input" value="Reading" /> Reading &nbsp;
+            <input type="checkbox" id="walking" class="form-check-input" value="Walking" /> Walking &nbsp;&nbsp;
+            <input type="checkbox" id="swimming" class="form-check-input" value="Swimming" /> Swimming
+        </td>        
     </tr>
     <tr><td>&nbsp;</td></tr>
     <tr>
-        <td><input type="hidden" id="id" /></td>
+        <td><input type="hidden" id="id" /><input type="hidden" id="Hobbyid" /></td>
         <td>&nbsp;</td>
         <td>
             <button class="btn btn-default btn-success" onclick="InsertUpdateRecord()">Submit</button> &nbsp;
@@ -82,6 +83,7 @@
 <script src="~/js/Employee.js"></script>
 <script>
     $(document).ready(function () {
-        SetEmployeeDetails();
+        //SetEmployeeDetails();
+        SetEmployeeHobbies();
     })
 </script>
